@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+    }
+    #table {
+      width: 60%;
+      height: 100vh;
+      background: rgb(30, 3, 46);
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 3000px;
+    }
+    .sun {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(211, 211, 211, 0.502);
+      border-radius: 50%;
+      margin-left: 15px;
+      text-align: center;
+      line-height: 2;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .sun:hover {
+      background-color: rgb(239, 115, 135);
+      color: white;
+    }
+    input {
+      width: 85%;
+      height: 45px;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-size: 20px;
+      margin-top: 50px;
+      border: 1px solid gray;
+      border-radius: 10px;
+      outline: none;
+      padding-left: 15px;
+      margin-right: -15px;
+    }
+    #send:hover {
+      background-color: black;
+    }
+    #list {
+      width: 80%;
+      height: 100vh;
+
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    .soon {
+      width: 95%;
+      height: 70px;
+      background-color: white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      line-height: 3.3;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-size: 20px;
+      padding-left: 30px;
+    }
+    .numInside {
+      color: white;
+      width: 40px;
+      height: 40px;
+      background-color: rgb(239, 115, 135);
+      border-radius: 50%;
+      line-height: 2.5;
+      text-align: center;
+      position: relative;
+      top: -15px;
+      left: -15px;
+    }
+
+    .soon {
+      display: flex;
+    }
+    .topSoon i {
+      color: rgb(239, 115, 135);
+      margin: 0 5px;
+    }
+    .topSoon {
+      display: flex;
+      justify-content: space-between;
+      width: 600px;
+      margin-right: 20px;
+      position: absolute;
+    }
+  </style>
+  <body style="background-color: lightgray">
+    <div
+      id="table"
+      style="display: flex; flex-direction: column; align-items: center"
+    >
+      <div
+        style="
+          width: 100%;
+          height: 50px;
+          background-color: black;
+          color: rgb(239, 115, 135);
+          text-align: center;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+            sans-serif;
+          font-size: 30px;
+          line-height: 1.8;
+        "
+      >
+        Feedback TA
+      </div>
+
+      <div
+        id="tableCon"
+        style="
+          width: 80%;
+          height: 250px;
+          background-color: white;
+          margin-top: 30px;
+          border-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        "
+      >
+        <div
+          style="
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 10px;
+          "
+        >
+          Thầy Phú dạy anh em có hay ????
+        </div>
+        <div id="list1" style="display: flex; margin-top: 20px">
+          <div onclick="doimau(1)" id="doimau1" class="sun">1</div>
+          <div onclick="doimau(2)" id="doimau2" class="sun">2</div>
+          <div onclick="doimau(3)" id="doimau3" class="sun">3</div>
+          <div onclick="doimau(4)" id="doimau4" class="sun">4</div>
+          <div onclick="doimau(5)" id="doimau5" class="sun">5</div>
+          <div onclick="doimau(6)" id="doimau6" class="sun">6</div>
+          <div onclick="doimau(7)" id="doimau7" class="sun">7</div>
+          <div onclick="doimau(8)" id="doimau8" class="sun">8</div>
+          <div onclick="doimau(9)" id="doimau9" class="sun">9</div>
+          <div onclick="doimau(10)" id="doimau10" class="sun">10</div>
+        </div>
+        <input id="content" type="text" placeholder="write a review" />
+        <span id="toithieu" style="color: tomato;font-size: 20px;margin-top: 5px;display: none;">Tối thiểu 10 ký tự</span>
+        <div
+        onclick="addTodo()"
+          id="send"
+          style="
+            position: absolute;
+            width: 80px;
+            height: 39px;
+            background-color: lightgray;
+            margin-top: 150px;
+            margin-left: 460px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 1.8;
+            font-weight: 900;
+            font-size: 20px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+            cursor: pointer;
+          "
+        >
+          Send
+        </div>
+      </div>
+
+      <div
+        style="
+          width: 80%;
+          height: 20px;
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div id="Reviews" style="color: white">3 Reviews</div>
+        <div id="rating" style="color: white">Average rating 9.5</div>
+      </div>
+
+      <div id="list">
+
+      </div>
+    </div>
+  </body>
+  <script src="/index.js"></script>
+</html>
